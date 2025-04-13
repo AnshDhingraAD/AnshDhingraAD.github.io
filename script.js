@@ -4,7 +4,7 @@ let currFolder;
 let currentaudio=new Audio();
 async function fetchsongs(folder) {
     currFolder=folder
-    let a = await fetch(`${currFolder}`)
+    let a = await fetch(`${currFolder}/`)
     let response = await a.text();
     console.log(response)
     let div = document.createElement('div')
@@ -96,14 +96,7 @@ async function displayalbum(){
 }
     
 async function main(){
-    let params = new URLSearchParams(window.location.search);
-let folderFromURL = params.get('playlist');
-
-if (folderFromURL) {
-    await fetchsongs(`/public/songs/${folderFromURL}`);
-} else {
-    await fetchsongs("/public/songs/");
-}
+    await fetchsongs("/public/songs/")
 
     let play=document.getElementById('play')
 
