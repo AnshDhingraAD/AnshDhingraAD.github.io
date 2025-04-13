@@ -1,5 +1,13 @@
 {
     "title":"The Revolution",
     "artist":"Arjan Dhillon",
-    "description":"Album"
+    "description":"Album",
+    "songs":[
+        "Gears - Arjan Dhillon.mp3",
+        "Ballin - Arjan Dhillon.mp3",
+        "kde Kde - Arjan Dhillon.mp3",
+        "Narazgi - Arjan Dhillon.mp3",
+        "Petrol - Arjan Dhillon.mp3",
+        "Scheme - Arjan Dhillon.mp3"
+    ]
 }
