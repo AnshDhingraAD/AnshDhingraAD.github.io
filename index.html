@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Vusic</title>
+    <link rel="stylesheet" href="page.css">
+    <link rel="icon" type="image/svg+xml" href="logo.svg"> 
+
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="left">
+            <div class="home bg-boxes border-radius">
+                <div class="logo"><img src="logo.svg" alt="logo">
+                    <h1>Music Vusic</h1>
+                </div>
+                <ul>
+                    
+                </ul>
+                <div class="close"><img src="close.svg" alt=""></div>
+            </div>
+            <div class="lib bg-boxes border-radius">
+                <div class="lib-heading">
+                    <img src="lib-icon.svg" alt="library">
+                    <h2>Library</h2>
+                </div>
+                <div class="songslist">
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="footer">
+                    <div>Designed By: Ansh Dhingra AD</div>
+                </div>
+            </div>
+        </div>
+        <div class="right bg-boxes border-radius">
+            <div class="header">
+                <div class="nav">
+                    <img class="hamburger" src="hamburger.svg" alt="">
+                    <!-- <img src="left.svg" alt="left">
+                    <img src="right.svg" alt="right"> -->
+                </div>
+                <div class="buttons">
+                    <button class="signin"><img src="mute.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="playlist">
+                <h1>Playlist</h1>
+                <div class="card-container custom-scrollbar">
+                
+                </div>
+            </div>
+            <div class="playbar">
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+                <div class="playbar-info">
+                    <div class="songnaam"></div>
+                    <div class="playbar-buttons">
+                        <img width="34" id="previous" src="prev.svg" alt="">
+                        <img width="34" id="play" src="playbar-play.svg" alt="">
+                        <img width="34" id="next" src="next.svg" alt="">
+                    </div>
+                    <div class="songtime"></div>
+                    <div class="vol">
+                        <img id="volicon" src="volume.svg" alt="">
+                        <img src="mute.svg" class="muteicon" alt="">
+                        <input type="range" id="volrange" min="0" max="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
