@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .playlist {
+            margin-top: 20px;
+        }
+        .song {
+            margin-bottom: 10px;
+        }
+        .cover {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Playlist</h1>
+    <div id="playlist" class="playlist">
+        <!-- Playlist content will be injected here -->
+    </div>
+
+    <script>
+        // This function fetches and displays the playlist
+        async function loadPlaylist(playlistName) {
+            try {
+                // Fetch the metadata.json for the playlist
+                const response = await fetch(`/playlists/${playlistName}/metadata.json`);
+                const playlistData = await response.json();
+
+                // Get the playlist container element
+                const playlistContainer = document.getElementById('playlist');
+
+                // Set the playlist cover image
+                const coverImage = document.createElement('img');
+                coverImage.src = playlistData.coverImage;
+                coverImage.alt = `${playlistData.playlistName} Cover`;
+                coverImage.classList.add('cover');
+                playlistContainer.appendChild(coverImage);
+
+                // Display each song in the playlist
+                const songList = document.createElement('ul');
+                playlistData.songs.forEach(song => {
+                    const songItem = document.createElement('li');
+                    songItem.classList.add('song');
+
+                    const songLink = document.createElement('a');
+                    songLink.href = song.file;
+                    songLink.textContent = song.title;
+
+                    songItem.appendChild(songLink);
+                    songList.appendChild(songItem);
+                });
+
+                playlistContainer.appendChild(songList);
+            } catch (error) {
+                console.error('Error loading playlist:', error);
+            }
+        }
+
+        // Load the playlist for 'rock' when the page is loaded
+        loadPlaylist('48');
+    </script>
+</body>
+</html>
