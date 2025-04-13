@@ -3,45 +3,43 @@ let songs;
 let currFolder;
 let currentaudio=new Audio();
 async function fetchsongs(folder) {
-    currFolder=folder
-    let a = await fetch(`${currFolder}/`)
-    let response = await a.text();
-    console.log(response)
-    let div = document.createElement('div')
-    div.innerHTML = response
-    let as=div.getElementsByClassName('icon-mp3')
-    songs=[]
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        songs.push(element.href)
-    }
-    
-    let songsul=document.querySelector('.songslist').getElementsByTagName("ul")[0]
-        songsul.innerHTML = "";
-        for (const song of songs) {
-            songsul.innerHTML=songsul.innerHTML+ `<li><a href="${song}">
+    currFolder = folder;
+
+    // Fetch the info.json file to get the metadata (title, artist, description, songs)
+    let a = await fetch(`${currFolder}/info.json`);
+    let response = await a.json();
+
+    // Get the song list from the JSON and map them to the full path
+    let songs = response.songs.map(song => `${currFolder}/${song}`);
+
+    let songsul = document.querySelector('.songslist').getElementsByTagName("ul")[0];
+    songsul.innerHTML = "";
+
+    // Loop through each song and create a list item
+    for (const song of songs) {
+        songsul.innerHTML += `<li><a href="${song}">
             <img src="music.svg" alt="">
             <div class="songinfo">
-            <div class="songname">${song.split('/public/songs/')[1].split('/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[0]}</div>
-            <div class="artistname">${song.split('/public/songs/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[1]}
-            </div>
+                <div class="songname">${song.split('/').pop().replaceAll('%20', ' ').split('.mp3')[0].split('-')[0]}</div>
+                <div class="artistname">${response.artist}</div>
             </div>
             <div class="playnow">Play Now
-            <img src="playbar-play.svg" alt="">
-            </div>  
-            </li>`
-        }
-        document.querySelectorAll(".songslist li a").forEach(a =>{
-            a.addEventListener('click', element =>{
-                element.preventDefault()
-                let song=a.href;
-                currentaudio.src = song; 
-                currentaudio.play();
-                play.src="pause.svg"
-                document.querySelector('.songnaam').innerHTML=currentaudio.src.split('/public/songs/')[1].split('/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[0] + "<br>" + currentaudio.src.split('/public/songs/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[1]
-            });
-        }); 
+                <img src="playbar-play.svg" alt="">
+            </div>
+        </a></li>`;
+    }
 
+    // Add event listener to play the song when clicked
+    document.querySelectorAll(".songslist li a").forEach(a => {
+        a.addEventListener('click', element => {
+            element.preventDefault();
+            let song = a.href;
+            currentaudio.src = song;
+            currentaudio.play();
+            play.src = "pause.svg";
+            document.querySelector('.songnaam').innerHTML = currentaudio.src.split('/').pop().replaceAll('%20', ' ').split('.mp3')[0].split('-')[0] + "<br>" + response.artist;
+        });
+    });
 }
 
 function formatTime(seconds) {
