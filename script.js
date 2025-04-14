@@ -60,31 +60,25 @@ function formatTime(seconds) {
 }
 
 async function displayalbum() {
-    let a = await fetch(`/public/songs/`);
-    let response = await a.text();
-    let div = document.createElement('div');
+    let response = await fetch("/public/songs/albums.json");
+    let folders = await response.json();
     let cardcontainer = document.querySelector('.card-container');
-    div.innerHTML = response;
 
-    let anchors = div.getElementsByTagName('a');
-    let array = Array.from(anchors);
-
-    for (let index = 0; index < array.length; index++) {
-        const e = array[index];
-        if (e.href.includes("/public/songs/")) {
-            let folder = (e.href.split('/public/songs/')[1]);
-
-            let a = await fetch(`/public/songs/${folder}/info.json`);
-            let response = await a.json();
+    for (const folder of folders) {
+        try {
+            let res = await fetch(`/public/songs/${folder}/info.json`);
+            let info = await res.json();
 
             cardcontainer.innerHTML += `<div data-folder="${folder}" class="card">
-                <img src= "/public/songs/${folder}/cover.jpg" alt="">
+                <img src="/public/songs/${folder}/cover.jpg" alt="">
                 <div class="play">
                     <img src="play.svg" alt="">
                 </div>
-                <h2>${response.title}</h2>
-                <p>${response.description}</p>
+                <h2>${info.title}</h2>
+                <p>${info.description}</p>
             </div>`;
+        } catch (err) {
+            console.warn(`Error loading ${folder}:`, err);
         }
     }
 
