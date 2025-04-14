@@ -1,5 +1,25 @@
 {
     "title":"Arijit Singh Hits",
     "artist":"Arijit Singh",
-    "description":"Collection"
+    "description":"Collection",
+    "songs": [
+        {
+          "href": "/public/songs/AS/Agar Tum Saath Ho - Tamasha.mp3"
+        },
+        {
+           "href": "/public/songs/AS/Jhoome Jo Pathaan - Pathaan.mp3"
+        },
+        {
+            "href": "/public/songs/AS/O Bedardeya - Arijit Singh.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Phir Aur Kya Chahiye - Arijit Singh.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Wafa Ne Bewafai Teraa Surroor - Arijit Singh.mp3"
+        },
+        {
+            "href": "/public/songs/AS/What Jhumka - Arijit Singh.mp3"
+        }
+      ]
 }

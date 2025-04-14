@@ -1,5 +1,34 @@
 {
     "title":"Trending Now",
     "artist":"Various Artists",
-    "description":"Bollywood Playlist"
+    "description":"Bollywood Playlist",
+    "songs": [
+        {
+          "href": "/public/songs/AS/Aaj Ki Raat - Stree 2.mp3"
+        },
+        {
+           "href": "/public/songs/AS/Aaye Haaye - Karan Aujla.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Apa Fer Milaangey - Savi Kahlon.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Churake - Vilen.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Drippy - Sidhu Moose Wala.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Ishq Hai - Anurag Saikia.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Ranjheya Ve - Zain Zohaib.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Tera Chehra - Sanam Teri Kasam.mp3"
+        },
+        {
+            "href": "/public/songs/AS/Unsaid Talks -  Gurnazar.mp3"
+        }
+      ]
 }
