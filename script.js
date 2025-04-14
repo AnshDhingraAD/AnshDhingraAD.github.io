@@ -49,7 +49,7 @@ async function fetchsongs(folder) {
             document.querySelector('.songnaam').innerHTML = `${currentaudio.src.split('/public/songs/')[1].split('/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[0]}<br>${currentaudio.src.split('/public/songs/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[1]}`;
         });
     });
-}
+
 
 
     // Add event listener to play the song when clicked
