@@ -1,5 +1,40 @@
 {
     "title": "This is Sidhu Moosewala",
     "artist": "Sidhu Moosewala",
-    "description": "Sidhu Moosewala Playlist"
+    "description": "Sidhu Moosewala Playlist",
+    "songs": [
+    {
+      "href": "/public/songs/smw/0 To 100 - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/295 - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Aroma - Sidhu Moose Wala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Bloodlust - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Drippy - Sidhu Moose Wala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Everybody Hurts - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Levels - Sidhu Moose Wala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Lock - Sidhu Moose Wala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Love Sick - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/Never Fold - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/smw/The Last ride - Sidhu Moosewala.mp3"
+    }
+  ]
 }

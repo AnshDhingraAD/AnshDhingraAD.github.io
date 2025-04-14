@@ -19,6 +19,8 @@ async function fetchsongs(folder) {
     for (let index = 0; index < songList.length; index++) {
         const song = songList[index];
         songs.push(song.href);
+        console.log("Songs array:", songs);
+
     }
 
 
@@ -63,13 +65,12 @@ async function displayalbum() {
     let a = await fetch("public/songs/albums.json");
     let response = await a.json();
 
-    // Check if 'albums' exists and is an array
-    console.log(response); // Log full response
+    console.log(response); 
     let folders = response.albums;
 
-    // Log the folders array to ensure it's an array
+ 
     console.log(folders);
-    console.log(Array.isArray(folders)); // This should log 'true'
+    console.log(Array.isArray(folders)); 
 
     if (!Array.isArray(folders)) {
         console.error("The 'albums' key is not an array in albums.json");
@@ -80,7 +81,7 @@ async function displayalbum() {
     let cardcontainer = document.querySelector('.card-container');
     div.innerHTML = response;
 
-    // Loop through each folder in the albums array
+ 
     for (let index = 0; index < folders.length; index++) {
         const folder = folders[index];
 
@@ -98,7 +99,7 @@ async function displayalbum() {
             </div>`;
     }
 
-    // Event listeners for the cards
+   
     Array.from(document.getElementsByClassName('card')).forEach(e => {
         e.addEventListener('click', async item => {
             await fetchsongs(item.currentTarget.dataset.folder);
@@ -147,20 +148,39 @@ async function main() {
     });
 
     previous.addEventListener('click', () => {
-        if (songs.indexOf(currentaudio.src) > 0) {
-            currentaudio.src = songs[songs.indexOf(currentaudio.src) - 1];
+        const current = decodeURIComponent(currentaudio.src.split("/public/songs/")[1]);
+        const index = songs.findIndex(song => song.includes(current));
+        console.log("Previous index:", index);
+    
+        if (index > 0) {
+            const newSong = songs[index - 1];
+            currentaudio.src = newSong;
             currentaudio.play();
-            document.querySelector('.songnaam').innerHTML = currentaudio.src.split('/public/songs/')[1].split('/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[0] + "<br>" + currentaudio.src.split('/public/songs/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[1];
+    
+            const name = newSong.split('/').pop().replace('.mp3', '').split(' - ');
+            document.querySelector('.songnaam').innerHTML = `${name[0]}<br>${name[1]}`;
         }
     });
-
+    
     next.addEventListener('click', () => {
-        if (songs.indexOf(currentaudio.src) < songs.length - 1) {
-            currentaudio.src = songs[songs.indexOf(currentaudio.src) + 1];
+        const current = decodeURIComponent(currentaudio.src.split("/public/songs/")[1]);
+        const index = songs.findIndex(song => song.includes(current));
+        console.log("Next index:", index);
+    
+        if (index !== -1 && index < songs.length - 1) {
+            const newSong = songs[index + 1];
+            currentaudio.src = newSong;
             currentaudio.play();
-            document.querySelector('.songnaam').innerHTML = currentaudio.src.split('/public/songs/')[1].split('/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[0] + "<br>" + currentaudio.src.split('/public/songs/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[1];
+    
+            const name = newSong.split('/').pop().replace('.mp3', '').split(' - ');
+            document.querySelector('.songnaam').innerHTML = `${name[0]}<br>${name[1]}`;
         }
     });
+    
+    
+    
+    
+    
 
     volicon.addEventListener('click', e => {
         volrange.style.display = (volrange.style.display == 'block') ? 'none' : 'block';

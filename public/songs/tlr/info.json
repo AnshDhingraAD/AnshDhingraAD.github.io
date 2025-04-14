@@ -1,5 +1,10 @@
 {
     "title": "The Last Ride",
     "artist": "Sidhu Moosewala",
-    "description": "Single"
+    "description": "Single",
+    "songs": [
+    {
+      "href": "/public/songs/tlr/The Last Ride - Sidhu Moosewala.mp3"
+    }
+]
 }

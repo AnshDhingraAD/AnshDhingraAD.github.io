@@ -1,5 +1,37 @@
 {
     "title":"Sicario",
     "artist":"Shubh",
-    "description":"Album"
+    "description":"Album",
+    "songs": [
+    {
+        "href": "/public/songs/sicario/Aura - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Bars - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Buckle Up - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Carti - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Fell For You - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/In Love - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Reckless - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Routine - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Ruger - Shubh.mp3"
+    },
+    {
+        "href": "/public/songs/sicario/Top G - Shubh.mp3"
+    }
+]
 }

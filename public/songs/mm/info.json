@@ -1,5 +1,32 @@
 {
     "title":"Making Memories",
     "artist":"Karan Aujla",
-    "description":"Album"
+    "description":"Album",
+    "songs": [
+
+    {
+        "href": "/public/songs/mm/Admirin You - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/mm/Bachke Bachke - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/mm/Champions Anthem - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/mm/Jee Ni Lagda - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/mm/Softly - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/mm/Try Me - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/mm/What - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/mm/You - Karan Aujla.mp3"
+    }
+  ]
 }

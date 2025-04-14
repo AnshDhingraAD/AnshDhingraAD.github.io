@@ -1,5 +1,10 @@
 {
     "title":"Levels",
     "artist":"Sidhu Moosewala",
-    "description":"single"
+    "description":"single",
+    "songs": [
+    {
+      "href": "/public/songs/Levels/Levels - Sidhu Moose Wala.mp3"
+    }
+  ]
 }

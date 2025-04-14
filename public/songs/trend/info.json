@@ -1,5 +1,40 @@
 {
     "title":"Punjabi Trending",
     "artist":"Various Artists",
-    "description":"Trending Songs"
+    "description":"Trending Songs",
+    "songs": [
+        {
+            "href": "/public/songs/trend/48 Rhymes - Karan Aujla.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Aura - Shubh.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Buckle Up - Shubh.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Everybody Hurts - Sidhu Moosewala.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Fell For You - Shubh.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Gears - Arjan Dhillon.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Kde Kde - Arjan Dhillon.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Levels - Sidhu Moose Wala.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Lock - Sidhu Moose Wala.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Petrol - Arjan Dhillon.mp3"
+        },
+        {
+            "href": "/public/songs/trend/Softly - Karan Aujla.mp3"
+        }
+    ]
 }

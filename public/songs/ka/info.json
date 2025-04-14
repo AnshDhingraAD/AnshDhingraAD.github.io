@@ -1,5 +1,46 @@
 {
     "title":"This is Karan Aujla",
     "artist":"Karan Aujla",
-    "description":"Karan Aujla Playlist"
+    "description":"Karan Aujla Playlist",
+    "songs": [
+    {
+      "href": "/public/songs/ka/48 Rhymes - Karan Aujla.mp3"
+    },
+    {
+       "href": "/public/songs/ka/Aaye Haaye - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Admirin You - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Bachke Bachke - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Champions Anthem - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Jee Ni Lagda - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Sifar Safar - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Softly - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Try Me - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Wavy - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/What - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/Winning Speech - Karan Aujla.mp3"
+    },
+    {
+        "href": "/public/songs/ka/You - Karan Aujla.mp3"
+    }
+  ]
 }

@@ -1,5 +1,22 @@
 {
     "title":"No Name",
     "artist":"Sidhu Moosewala",
-    "description":"EP"
+    "description":"EP",
+    "songs": [
+    {
+      "href": "/public/songs/no name/0 To 100 - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/no name/Bloodlust - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/no name/Everybody Hurts - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/no name/Love Sick - Sidhu Moosewala.mp3"
+    },
+    {
+        "href": "/public/songs/no name/Never Fold - Sidhu Moosewala.mp3"
+    }
+  ]
 }
