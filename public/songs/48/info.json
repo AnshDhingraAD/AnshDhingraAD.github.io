@@ -2,7 +2,9 @@
     "title": "48 Rhymes",
     "artist": "Karan Aujla",
     "description": "Single",
-    "songs":[
-        "48 Rhymes - Karan Aujla.mp3"
-    ]
+    "songs": [
+    {
+      "href": "/public/songs/48/48 Rhymes - Karan Aujla.mp3"
+    }
+  ]
 }

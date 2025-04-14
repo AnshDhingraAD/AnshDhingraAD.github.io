@@ -5,29 +5,52 @@ let currentaudio=new Audio();
 async function fetchsongs(folder) {
     currFolder = folder;
 
-    // Fetch the info.json file to get the metadata (title, artist, description, songs)
-    let a = await fetch(`${currFolder}/info.json`);
+    // Fetch the info.json file for the specified playlist
+    let a = await fetch(`/public/songs/${folder}/info.json`);
+    
+    // Make sure to parse the JSON response
     let response = await a.json();
+    console.log(response); // Check the content of the JSON file
 
-    // Get the song list from the JSON and map them to the full path
-    let songs = response.songs.map(song => `${currFolder}/${song}`);
+    // Initialize an empty array for songs
+    songs = [];
+    let songList = response.songs; // Assuming the JSON file has a 'songs' field containing an array of song objects
 
+    // Iterate over each song and add it to the songs array
+    for (let index = 0; index < songList.length; index++) {
+        const song = songList[index];
+        songs.push(song.href);
+    }
+
+    // Now update the UI with the song list
     let songsul = document.querySelector('.songslist').getElementsByTagName("ul")[0];
-    songsul.innerHTML = "";
-
-    // Loop through each song and create a list item
+    songsul.innerHTML = ""; // Clear the existing song list
     for (const song of songs) {
         songsul.innerHTML += `<li><a href="${song}">
             <img src="music.svg" alt="">
             <div class="songinfo">
-                <div class="songname">${song.split('/').pop().replaceAll('%20', ' ').split('.mp3')[0].split('-')[0]}</div>
-                <div class="artistname">${response.artist}</div>
+                <div class="songname">${song.split('/public/songs/')[1].split('/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[0]}</div>
+                <div class="artistname">${song.split('/public/songs/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[1]}</div>
             </div>
             <div class="playnow">Play Now
                 <img src="playbar-play.svg" alt="">
-            </div>
+            </div>  
         </a></li>`;
     }
+
+    // Attach event listeners to the song links
+    document.querySelectorAll(".songslist li a").forEach(a => {
+        a.addEventListener('click', element => {
+            element.preventDefault(); // Prevent default anchor behavior
+            let song = a.href;
+            currentaudio.src = song; 
+            currentaudio.play();
+            play.src = "pause.svg";
+            document.querySelector('.songnaam').innerHTML = `${currentaudio.src.split('/public/songs/')[1].split('/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[0]}<br>${currentaudio.src.split('/public/songs/')[1].replaceAll('%20',' ').split('.mp3')[0].split('-')[1]}`;
+        });
+    });
+}
+
 
     // Add event listener to play the song when clicked
     document.querySelectorAll(".songslist li a").forEach(a => {

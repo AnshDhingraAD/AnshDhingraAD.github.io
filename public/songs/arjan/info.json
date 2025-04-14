@@ -2,12 +2,24 @@
     "title":"The Revolution",
     "artist":"Arjan Dhillon",
     "description":"Album",
-    "songs":[
-        "Gears - Arjan Dhillon.mp3",
-        "Ballin - Arjan Dhillon.mp3",
-        "kde Kde - Arjan Dhillon.mp3",
-        "Narazgi - Arjan Dhillon.mp3",
-        "Petrol - Arjan Dhillon.mp3",
-        "Scheme - Arjan Dhillon.mp3"
-    ]
+    "songs": [
+    {
+      "href": "/public/songs/arjan/Ballin - Arjan Dhillon.mp3"
+    },
+    {
+       "href": "/public/songs/arjan/Kde Kde - Arjan Dhillon.mp3"
+    },
+    {
+        "href": "/public/songs/arjan/Gears - Arjan Dhillon.mp3"
+    },
+    {
+        "href": "/public/songs/arjan/Narazgi - Arjan Dhillon.mp3"
+    },
+    {
+        "href": "/public/songs/arjan/Petrol - Arjan Dhillon.mp3"
+    },
+    {
+        "href": "/public/songs/arjan/Scheme - Arjan Dhillon.mp3"
+    }
+  ]
 }
