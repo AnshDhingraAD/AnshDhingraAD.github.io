@@ -60,35 +60,52 @@ function formatTime(seconds) {
 }
 
 async function displayalbum() {
-    let response = await fetch("/public/songs/albums.json");
-    let folders = await response.json();
+    let a = await fetch("public/songs/albums.json");
+    let response = await a.json();
+
+    // Check if 'albums' exists and is an array
+    console.log(response); // Log full response
+    let folders = response.albums;
+
+    // Log the folders array to ensure it's an array
+    console.log(folders);
+    console.log(Array.isArray(folders)); // This should log 'true'
+
+    if (!Array.isArray(folders)) {
+        console.error("The 'albums' key is not an array in albums.json");
+        return;
+    }
+
+    let div = document.createElement('div');
     let cardcontainer = document.querySelector('.card-container');
+    div.innerHTML = response;
 
-    for (const folder of folders) {
-        try {
-            let res = await fetch(`/public/songs/${folder}/info.json`);
-            let info = await res.json();
+    // Loop through each folder in the albums array
+    for (let index = 0; index < folders.length; index++) {
+        const folder = folders[index];
 
-            cardcontainer.innerHTML += `<div data-folder="${folder}" class="card">
+        let a = await fetch(`/public/songs/${folder}/info.json`);
+        let albumData = await a.json();
+
+        cardcontainer.innerHTML += `
+            <div data-folder="${folder}" class="card">
                 <img src="/public/songs/${folder}/cover.jpg" alt="">
                 <div class="play">
                     <img src="play.svg" alt="">
                 </div>
-                <h2>${info.title}</h2>
-                <p>${info.description}</p>
+                <h2>${albumData.title}</h2>
+                <p>${albumData.description}</p>
             </div>`;
-        } catch (err) {
-            console.warn(`Error loading ${folder}:`, err);
-        }
     }
 
+    // Event listeners for the cards
     Array.from(document.getElementsByClassName('card')).forEach(e => {
         e.addEventListener('click', async item => {
             await fetchsongs(item.currentTarget.dataset.folder);
             currentaudio.src = songs[0];
             currentaudio.play();
             play.src = "pause.svg";
-            document.querySelector('.songnaam').innerHTML = currentaudio.src.split('public/songs/')[1].split('/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[0] + "<br>" + currentaudio.src.split('public/songs/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[1];
+            document.querySelector('.songnaam').innerHTML = `${currentaudio.src.split('/public/songs/')[1].split('/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[0]}<br>${currentaudio.src.split('/public/songs/')[1].replaceAll('%20', ' ').split('.mp3')[0].split('-')[1]}`;
             document.querySelector('.left').style.left = 0;
         });
     });
