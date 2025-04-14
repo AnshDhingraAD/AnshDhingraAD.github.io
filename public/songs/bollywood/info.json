@@ -4,31 +4,31 @@
     "description":"Bollywood Playlist",
     "songs": [
         {
-          "href": "/public/songs/AS/Aaj Ki Raat - Stree 2.mp3"
+          "href": "/public/songs/bollywood/Aaj Ki Raat - Stree 2.mp3"
         },
         {
-           "href": "/public/songs/AS/Aaye Haaye - Karan Aujla.mp3"
+           "href": "/public/songs/bollywood/Aaye Haaye - Karan Aujla.mp3"
         },
         {
-            "href": "/public/songs/AS/Apa Fer Milaangey - Savi Kahlon.mp3"
+            "href": "/public/songs/bollywood/Apa Fer Milaangey - Savi Kahlon.mp3"
         },
         {
-            "href": "/public/songs/AS/Churake - Vilen.mp3"
+            "href": "/public/songs/bollywood/Churake - Vilen.mp3"
         },
         {
-            "href": "/public/songs/AS/Drippy - Sidhu Moose Wala.mp3"
+            "href": "/public/songs/bollywood/Drippy - Sidhu Moose Wala.mp3"
         },
         {
-            "href": "/public/songs/AS/Ishq Hai - Anurag Saikia.mp3"
+            "href": "/public/songs/bollywood/Ishq Hai - Anurag Saikia.mp3"
         },
         {
-            "href": "/public/songs/AS/Ranjheya Ve - Zain Zohaib.mp3"
+            "href": "/public/songs/bollywood/Ranjheya Ve - Zain Zohaib.mp3"
         },
         {
-            "href": "/public/songs/AS/Tera Chehra - Sanam Teri Kasam.mp3"
+            "href": "/public/songs/bollywood/Tera Chehra - Sanam Teri Kasam.mp3"
         },
         {
-            "href": "/public/songs/AS/Unsaid Talks -  Gurnazar.mp3"
+            "href": "/public/songs/bollywood/Unsaid Talks -  Gurnazar.mp3"
         }
       ]
 }
